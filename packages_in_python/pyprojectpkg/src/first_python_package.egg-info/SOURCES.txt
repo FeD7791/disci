@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/first_python_package.egg-info/PKG-INFO
+src/first_python_package.egg-info/SOURCES.txt
+src/first_python_package.egg-info/dependency_links.txt
+src/first_python_package.egg-info/top_level.txt
+src/pyprojectpkg/__init__.py
+src/pyprojectpkg/data.json
+src/pyprojectpkg/hello.py

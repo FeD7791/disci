@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: first-python-package
+Version: 0.0.1
+Summary: This is my first package so, value it
+Author: Federico Bustillos
+Author-email: jorgefedericobustillosrava@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+
+# first-python-package
+This package does amazing things.
+## Installation
+
+```shell
+$ python -m pip install first-python-package
+```

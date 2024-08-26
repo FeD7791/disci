@@ -1,0 +1,1 @@
+global_variable = ['hola','hello','guttentag','bonjour','o_hayo_gosaimas']
