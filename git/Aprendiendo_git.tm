@@ -1,4 +1,4 @@
-<TeXmacs|1.99.18>
+<TeXmacs|2.1.4>
 
 <style|<tuple|generic|spanish>>
 
@@ -665,7 +665,47 @@
     volvemos a la rama anterior
   </itemize-dot>
 
-  <subsection|Que hago si hice un commit en la rama equivocada?>
+  <section|Git avanzado>
+
+  <subsection|Rebase>
+
+  Esto es super util.
+
+  <\itemize-dot>
+    <item>Estuviste trabjando en tu rama local y tenes cambios comiteados
+
+    <item>El remoto, por alguna razon, tiene cambios que no has incorporado
+    en tu rama local.
+
+    <item>Ejecutar un git pull nos dara la clasica advertencia del merge
+    conflict. Para salir de esta situacion podemos utilizar git rebase.
+  </itemize-dot>
+
+  Comando : <verbatim|git pull --rebase>
+
+  Que hace Git Rebase? El comando completo hace lo siguiente:
+
+  <\enumerate-numeric>
+    <item>First, it performs a <code*|git fetch> to get the latest changes
+    from the remote branch you're tracking.
+
+    <item>After fetching, instead of merging the remote changes with your
+    local commits (which is the default behavior of <code*|git pull>), it
+    <strong|rebases your local commits> on top of the remote branch. This
+    means:
+
+    <\itemize-minus>
+      <item>It temporarily <strong|"undoes"> your local commits (but keeps
+      them in the background).
+
+      <item>Then, it applies the remote changes (as if they were committed
+      first).
+
+      <item>Finally, it <strong|re-applies your local commits on top of the
+      updated branch>, effectively placing your work on top of the changes
+      from the remote branch.
+    </itemize-minus>
+  </enumerate-numeric>
 </body>
 
 <\initial>
@@ -711,8 +751,9 @@
     <associate|auto-39|<tuple|9|13>>
     <associate|auto-4|<tuple|3|2>>
     <associate|auto-40|<tuple|10|13>>
-    <associate|auto-41|<tuple|11|?>>
-    <associate|auto-42|<tuple|11.1|?>>
+    <associate|auto-41|<tuple|11|14>>
+    <associate|auto-42|<tuple|12|14>>
+    <associate|auto-43|<tuple|12.1|14>>
     <associate|auto-5|<tuple|4|3>>
     <associate|auto-6|<tuple|5|4>>
     <associate|auto-7|<tuple|6|4>>
@@ -910,6 +951,18 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|10<space|2spc>Revertir
       un Commit> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-40><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|11<space|2spc>Caso
+      de Emergencia, git reflog> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-41><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|12<space|2spc>Git
+      avanzado> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-42><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|12.1<space|2spc>Rebase
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-43>>
     </associate>
   </collection>
 </auxiliary>
